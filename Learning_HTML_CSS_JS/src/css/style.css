@@ -1,0 +1,150 @@
+/** reset css **/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif; /** Font chữ **/
+}
+
+#wrapper {
+
+}
+
+/** Phần đầu của trang web **/
+#header {
+    line-height: 46px; /** Độ cao của header là 46px **/
+    background-color: #000; /** Màu nền là màu đen **/
+    position: fixed; /** tính chất làm dính header **/
+    top: 0; /** Dính lên trên **/
+    left: 0; /** Dính sang trái **/
+    right: 0; /** Dính lên phải **/
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+/** Thanh navigation **/
+#nav .subnav {
+    list-style-type: none;
+}
+
+#nav > li {
+    display: inline-block; /** Giúp khoa các element li trực tiếp cấp 1 nằm trên cùng 1 hàng **/
+}
+
+/** Các thẻ li con của id nav **/
+#nav li {
+    position: relative; /** Giúp các thẻ li là con của class subnav cùng nằm trên một trục thẳng đứng **/
+}
+
+/** Chỉ thay đổi màu sắc của các thẻ a là con cấp 1 của li trong id nav có màu trắng **/
+#nav > li > a{ 
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+/** tất cả các thẻ a trong li là con của id nav đều chịu ảnh hưởng khác với cách select trực tiếp con cấp 1 ở trên **/
+#nav li a { 
+    /**color: #fff;  Màu của các thẻ a trong li của id nav **/
+    text-decoration: none; /** Bỏ gạch chân cho các thẻ a**/
+    line-height: 46px; /** Do header có line-height là 46px thì các thẻ a của li có line-height phải bằng chính giá trị của header để nó tự cân bằng khoảng đệm **/
+    padding: 0 24px ; /** Trên dưới là 0, trái phải dãn cách 24px **/
+    display: block; /** Vì #nav li đã được setup thuộc tính inline-block nên muốn thẻ a có background màu hoàn toàn thì phải cho thẻ a inline-block **/
+}
+
+/** Cách select kép giúp cho các select cùng chung 1 thuộc tính, không bị dư thừa **/
+#nav .subnav li:hover a /** các thẻ a là con của li bị hover trong class subnav sẽ chịu ảnh hưởng **/, 
+#nav > li:hover > a /** các thẻ a là con của thẻ li bị hover trực tiếp cấp 1 của id nav sẽ chịu ảnh hưởng **/ { 
+    color: #000; /** chữ màu đen **/
+    background-color: #ccc; /** Màu nền xám**/
+    line-height: 49px;
+    transition: 1.5s;
+}
+
+/** class subnav là con của id nav**/
+#nav .subnav {
+    display: none;  /** Giúp các thành phần trong class subnav bị ẩn đi  **/
+    position: absolute; /** Giúp cho các phần tử class subnav sẽ nằm trên một trục thẳng dựa theo cấp cha của nó là #nav li **/
+    background-color: #fff; /** Màu nền là trắng**/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 153px;
+}
+
+
+/** Các thẻ a trong class subnav đều có màu chữ là đen**/
+#nav .subnav a { 
+    color: #000; /** Màu chữ màu đen**/
+}
+
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+}
+#header .search-btn:hover {
+    background-color: #f44336;
+    line-height: 46px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+
+#header .search-icon {
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+}
+
+/** Phần slide **/
+#slider { 
+    position: relative;
+    padding-top: 50%;
+    margin-top: 48px;
+    background: url('/Project/Learning_HTML_CSS_JS/src/imgs/HD\ wallpaper_\ Mount\ Everest\,\ Nepal\,\ Zermatt\,\ 4k\,\ HD\ wallpaper\,\ Valais\,\ Switzerland.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+/** Phần nội dung**/
+#content {
+
+}
+
+.content-section {
+
+}
+
+
+.section-heading {
+    
+}
+
+
+/** Phần chân trang web**/
+#footer {
+
+}
